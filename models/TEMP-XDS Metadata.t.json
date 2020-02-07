@@ -1,0 +1,190 @@
+{
+  "@type" : "TEMPLATE",
+  "uid" : "7589d721-361a-4a97-a688-d7eb1755353c",
+  "description" : {
+    "@type" : "RESOURCE_DESCRIPTION",
+    "originalAuthor" : {
+      "date" : "2019-10-08"
+    },
+    "otherContributors" : [ ],
+    "lifecycleState" : {
+      "codeString" : "unmanaged"
+    },
+    "ipAcknowledgements" : { },
+    "references" : { },
+    "conversionDetails" : { },
+    "otherDetails" : {
+      "licence" : "This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.",
+      "custodian_organisation" : "openEHR Foundation",
+      "original_namespace" : "org.openehr",
+      "original_publisher" : "openEHR Foundation",
+      "custodian_namespace" : "org.openehr",
+      "MD5-CAM-1.0.1" : "6137f253967245648d7a2380d2a51d5d",
+      "PARENT:MD5-CAM-1.0.1" : "B2538EC96A6545E2E6F04CE532DA36E3"
+    },
+    "details" : {
+      "en" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "en"
+        },
+        "keywords" : [ ],
+        "originalResourceUri" : { },
+        "otherDetails" : { }
+      }
+    }
+  },
+  "parentArchetypeId" : "openEHR-EHR-CLUSTER.xds_metadata.v0",
+  "differential" : true,
+  "archetypeId" : {
+    "@type" : "ARCHETYPE_HRID",
+    "value" : "openEHR-EHR-CLUSTER.xdsmetadata.v0"
+  },
+  "definition" : {
+    "@type" : "C_COMPLEX_OBJECT",
+    "rmTypeName" : "CLUSTER",
+    "nodeId" : "at0000.1",
+    "attributes" : [ {
+      "@type" : "C_ATTRIBUTE",
+      "rmAttributeName" : "items",
+      "children" : [ {
+        "@type" : "C_COMPLEX_OBJECT",
+        "rmTypeName" : "ELEMENT",
+        "occurrences" : "0..0",
+        "nodeId" : "at0002.1",
+        "attributes" : [ ],
+        "attributeTuples" : [ ]
+      }, {
+        "@type" : "C_COMPLEX_OBJECT",
+        "rmTypeName" : "ELEMENT",
+        "nodeId" : "at0003.1",
+        "attributes" : [ {
+          "@type" : "C_ATTRIBUTE",
+          "rmAttributeName" : "value",
+          "children" : [ {
+            "@type" : "C_COMPLEX_OBJECT",
+            "rmTypeName" : "DV_CODED_TEXT",
+            "occurrences" : "1..1",
+            "defaultValue" : {
+              "defining_code" : {
+                "terminology_id" : {
+                  "value" : "SNOMED-CT",
+                  "@type" : "TERMINOLOGY_ID"
+                },
+                "code_string" : "163111000000100",
+                "@type" : "CODE_PHRASE"
+              },
+              "value" : "Medication record - care record element (record artifact)",
+              "@type" : "DV_CODED_TEXT"
+            },
+            "attributes" : [ {
+              "@type" : "C_ATTRIBUTE",
+              "rmAttributeName" : "defining_code",
+              "children" : [ {
+                "@type" : "C_TERMINOLOGY_CODE",
+                "rmTypeName" : "TERMINOLOGY_CODE",
+                "terminologyId" : {
+                  "value" : "local_terms"
+                },
+                "constraint" : [ ],
+                "selectedTerminologies" : [ "local_terms" ],
+                "includedExternalTerminologyCodes" : [ {
+                  "terminologyId" : "local_terms",
+                  "code" : "163111000000100",
+                  "value" : "Medication record - care record element (record artifact)"
+                } ]
+              } ]
+            } ],
+            "attributeTuples" : [ ]
+          } ]
+        } ],
+        "attributeTuples" : [ ]
+      }, {
+        "@type" : "C_COMPLEX_OBJECT",
+        "rmTypeName" : "ELEMENT",
+        "occurrences" : "0..0",
+        "nodeId" : "at0004.1",
+        "attributes" : [ ],
+        "attributeTuples" : [ ]
+      }, {
+        "@type" : "C_COMPLEX_OBJECT",
+        "rmTypeName" : "ELEMENT",
+        "occurrences" : "0..0",
+        "nodeId" : "at0007.1",
+        "attributes" : [ ],
+        "attributeTuples" : [ ]
+      }, {
+        "@type" : "C_COMPLEX_OBJECT",
+        "rmTypeName" : "ELEMENT",
+        "occurrences" : "0..0",
+        "nodeId" : "at0009.1",
+        "attributes" : [ ],
+        "attributeTuples" : [ ]
+      }, {
+        "@type" : "C_COMPLEX_OBJECT",
+        "rmTypeName" : "ELEMENT",
+        "occurrences" : "0..0",
+        "nodeId" : "at0011.1",
+        "attributes" : [ ],
+        "attributeTuples" : [ ]
+      }, {
+        "@type" : "C_COMPLEX_OBJECT",
+        "rmTypeName" : "ELEMENT",
+        "occurrences" : "0..0",
+        "nodeId" : "at0010.1",
+        "attributes" : [ {
+          "@type" : "C_ATTRIBUTE",
+          "rmAttributeName" : "value",
+          "children" : [ {
+            "@type" : "C_COMPLEX_OBJECT",
+            "rmTypeName" : "DV_MULTIMEDIA",
+            "attributes" : [ {
+              "@type" : "C_ATTRIBUTE",
+              "rmAttributeName" : "media_type",
+              "children" : [ {
+                "@type" : "C_TERMINOLOGY_CODE",
+                "rmTypeName" : "TERMINOLOGY_CODE",
+                "occurrences" : "1..1",
+                "terminologyId" : {
+                  "value" : "openEHR"
+                },
+                "constraint" : [ "406", "407", "408", "414", "415", "416", "417", "418", "419", "420", "421", "422", "423", "424", "427", "429", "517", "518", "387", "388", "389", "390", "391", "392", "393", "394", "395", "396", "397", "398", "399", "400", "409", "410", "411", "412", "413", "401", "402", "404", "405", "519", "637", "682", "683" ]
+              } ]
+            } ],
+            "attributeTuples" : [ ]
+          } ]
+        } ],
+        "attributeTuples" : [ ]
+      } ]
+    } ],
+    "attributeTuples" : [ ]
+  },
+  "terminology" : {
+    "@type" : "ARCHETYPE_TERMINOLOGY",
+    "conceptCode" : "at0000",
+    "termDefinitions" : {
+      "en" : { }
+    },
+    "termBindings" : { },
+    "terminologyExtracts" : { },
+    "valueSets" : { }
+  },
+  "adlVersion" : "1.4",
+  "buildUid" : "a7e4dce0-8845-393e-a06e-ad9550568d6a",
+  "rmName" : "openehr",
+  "rmRelease" : "1.0.3",
+  "generated" : true,
+  "templateId" : "TEMP-XDS Metadata",
+  "otherMetaData" : { },
+  "templateOverlays" : [ ],
+  "originalLanguage" : {
+    "terminologyId" : {
+      "value" : "ISO_639-1"
+    },
+    "codeString" : "en"
+  },
+  "translations" : [ ]
+}
