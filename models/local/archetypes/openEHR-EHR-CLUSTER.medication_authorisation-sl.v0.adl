@@ -1,0 +1,630 @@
+archetype (adl_version=1.4; uid=9a397db0-460b-31dd-bda1-06f6600ab6b0)
+	openEHR-EHR-CLUSTER.medication_authorisation-sl.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["sl"] = <
+			language = <[ISO_639-1::sl]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"8/11/2010">
+		["name"] = <"Sam Heard">
+		["organisation"] = <"NEHTA">
+		["email"] = <"sam.heard@oceaninformatics.com">
+	>
+	lifecycle_state = <"NotSet">
+	other_contributors = <"Silje Ljosland Bakke, Helse Bergen HF, Norway (Editor)","John Bennett, NEHTA, Australia","Sharmila Biswas, Australia","Stephen Chu, NEHTA, Australia (Editor)","Matthew Cordell, NEHTA, Australia","Gail Easterbrook, Flinders Medical Centre, Australia","David Evans, Queensland Health, Australia","Sarah Gaunt, NEHTA, Australia","Trina Gregory, cpc, Australia","Sam Heard, Ocean Informatics, Australia (Editor)","Mary Kelaher, NEHTA, Australia","Robert L'egan, NEHTA, Australia","Heather Leslie, Ocean Informatics, Australia (Editor)","Susan McIndoe, Royal District Nursing Service, Australia","David McKillop, NEHTA, Australia","Chris Mitchell, RACGP, Australia","Stewart Morrison, NEHTA, Australia","Chris Pearce, Melbourne East GP Network, Australia","Camilla Preeston, Royal Australian College of General Practitioners, Australia","Margaret Prichard, NEHTA, Australia","Cathy Richardson, NEHTA, Australia","Robyn Richards, NEHTA - Clinical Terminology, Australia","John Taylor, NEHTA, Australia","Richard Townley-O'Neill, NEHTA, Australia (Editor)","Kylie Young, The Royal Australian College of General Practitioners, Australia">
+	details = <
+		["sl"] = <
+			language = <[ISO_639-1::sl]>
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"Recording intent to use or to continue to use a medicine, vaccine or other therapeutic good including instructions on use, dispensing and administration, where neccessary.">
+			keywords = <"medication","order","prescribe","therapy","substance","drug","therapeutic","otc","therapeutic good">
+		>
+	>
+	other_details = <
+		["references"] = <"openEHR Foundation Medication archetypes http://www.openehr.org/knowledge
+NEHTA's Therapeutic Good Use Data Group from the NEHTA Website http://www.nehta.gov.au
+Intermountain Healthcare Medication order model, Personal Communication to Sam Heard by Dr Stan Huff.
+Royal Australian College of General Practitioners. Fact Sheet: Medicines List. 2010.">
+		["MD5-CAM-1.0.1"] = <"aa661b7bb891de24430ee5b9fd39a8c9">
+		["build_uid"] = <"4355c4b8-87da-35f2-bd47-571585647d16">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Medication authorisation (slovenia)
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0110] occurrences matches {0..1} matches {    -- Package ePrescription unique identifier
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0139] occurrences matches {0..1} matches {    -- Update timestamp
+				value matches {
+					DV_DATE_TIME matches {*}
+				}
+			}
+			ELEMENT[at0087] occurrences matches {0..1} matches {    -- ePrescription unique identifier
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0118] occurrences matches {0..1} matches {    -- Renewable
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+			ELEMENT[at0025] occurrences matches {0..1} matches {    -- Maximum number of dispenses
+				value matches {
+					DV_COUNT matches {
+						magnitude matches {|>=0|}
+					}
+				}
+			}
+			ELEMENT[at0086] occurrences matches {0..1} matches {    -- Number of remaining dispenses
+				value matches {
+					DV_COUNT matches {*}
+				}
+			}
+			ELEMENT[at0091] occurrences matches {0..1} matches {    -- Type of prescription
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0092,    -- Brand name
+							at0093,    -- Magistral
+							at0094]    -- INN
+						}
+					}
+				}
+			}
+			ELEMENT[at0077] occurrences matches {0..1} matches {    -- Prescription document type
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0080,    -- Green
+							at0081]    -- White
+						}
+					}
+				}
+			}
+			ELEMENT[at0085] occurrences matches {0..1} matches {    -- Prescription status
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0130,    -- Prescribed
+							at0131,    -- Partially used
+							at0132,    -- Partially used and cancelled
+							at0133,    -- Cancelled
+							at0134,    -- Used
+							at0135,    -- In preparation
+							at0136,    -- In dispense
+							at0141,    -- Rejected
+							at0142,    -- Withdrawn
+							at0143]    -- Partially used and rejected
+						}
+					}
+				}
+			}
+			ELEMENT[at0095] occurrences matches {0..1} matches {    -- Surcharge type
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0096,    -- Without additional payment
+							at0097,    -- Insurance
+							at0098,    -- Insurance company
+							at0099]    -- From the state budget
+						}
+					}
+				}
+			}
+			ELEMENT[at0100] occurrences matches {0..1} matches {    -- Payer
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0119,    -- Person
+							at0120,    -- UPB
+							at0121,    -- MO
+							at0122]    -- Other
+						}
+					}
+				}
+			}
+			ELEMENT[at0138] occurrences matches {0..1} matches {    -- Supply quantity
+				value matches {
+					DV_COUNT matches {*}
+				}
+			}
+			ELEMENT[at0137] occurrences matches {0..1} matches {    -- Supply duration
+				value matches {
+					DV_COUNT matches {*}
+				}
+			}
+			ELEMENT[at0106] occurrences matches {0..1} matches {    -- Additional instructions for pharmacist
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0111] occurrences matches {0..1} matches {    -- Do not switch
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+			ELEMENT[at0140] occurrences matches {0..1} matches {    -- Urgent
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+			ELEMENT[at0112] occurrences matches {0..1} matches {    -- Interactions
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+			ELEMENT[at0129] occurrences matches {0..1} matches {    -- Maximum dose exceeded
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+			ELEMENT[at0082] occurrences matches {0..1} matches {    -- Illness condition type
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0083,    -- Acute condition
+							at0084]    -- Chronic condition
+						}
+					}
+				}
+			}
+			ELEMENT[at0123] occurrences matches {0..1} matches {    -- Treatment reason
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0124,    -- Disease
+							at0125,    -- Injury outside work
+							at0126,    -- Industrial disease
+							at0127,    -- Occupational injury
+							at0128]    -- Third - person injury
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Medication authorisation (slovenia)">
+					description = <"Details of the authorisation of a medicine, vaccine or other therapeutic good.">
+				>
+				["at0025"] = <
+					text = <"Maximum number of dispenses">
+					description = <"The number of times the expressed quantity of medicine, vaccine or other therapeutic good may be refilled or redispensed without a new prescription.">
+				>
+				["at0077"] = <
+					text = <"Prescription document type">
+					description = <"The contractual arrangements for medication supply.">
+				>
+				["at0080"] = <
+					text = <"Green">
+					description = <"Prescription paid by health insurance.">
+				>
+				["at0081"] = <
+					text = <"White">
+					description = <"The patient pays for the prescription.">
+				>
+				["at0082"] = <
+					text = <"Illness condition type">
+					description = <"The type of illnes to which this prescription applies.">
+				>
+				["at0083"] = <
+					text = <"Acute condition">
+					description = <"Acute illness.">
+				>
+				["at0084"] = <
+					text = <"Chronic condition">
+					description = <"Chronic illness.">
+				>
+				["at0085"] = <
+					text = <"Prescription status">
+					description = <"Status of the prescription that is linked to Slovenian ePrescription workflow.">
+				>
+				["at0086"] = <
+					text = <"Number of remaining dispenses">
+					description = <"The attribute holds number of already">
+				>
+				["at0087"] = <
+					text = <"ePrescription unique identifier">
+					description = <"ID of one prescription ">
+				>
+				["at0091"] = <
+					text = <"Type of prescription">
+					description = <"*">
+				>
+				["at0092"] = <
+					text = <"Brand name">
+					description = <"Name of the brand of a medicine, vaccine or other therapeutic good.">
+				>
+				["at0093"] = <
+					text = <"Magistral">
+					description = <"Magitral prescription.">
+				>
+				["at0094"] = <
+					text = <"INN">
+					description = <"Generic name prescription. International Nonproprietary Name ">
+				>
+				["at0095"] = <
+					text = <"Surcharge type">
+					description = <"Type of additional payment for the medicine, vaccine or other therapeutic good.">
+				>
+				["at0096"] = <
+					text = <"Without additional payment">
+					description = <"Without additional payment.">
+				>
+				["at0097"] = <
+					text = <"Insurance">
+					description = <"Insurance">
+				>
+				["at0098"] = <
+					text = <"Insurance company">
+					description = <"Insurance company">
+				>
+				["at0099"] = <
+					text = <"From the state budget">
+					description = <"From the state budget">
+				>
+				["at0100"] = <
+					text = <"Payer">
+					description = <"Payer">
+				>
+				["at0106"] = <
+					text = <"Additional instructions for pharmacist">
+					description = <"Additional instrucitons for the pharmacist. ">
+				>
+				["at0110"] = <
+					text = <"Package ePrescription unique identifier">
+					description = <"ID of the package. Within one package can be multiple outpatient, discharge or temporary leave prescriptions.">
+				>
+				["at0111"] = <
+					text = <"Do not switch">
+					description = <"Physician doesn't allow change of product of medication, vaccine or other therapeutic good. ">
+				>
+				["at0112"] = <
+					text = <"Interactions">
+					description = <"Boolean if the interactions between two or multiple prescribed medicine on the same prescription package has been made. ">
+				>
+				["at0118"] = <
+					text = <"Renewable">
+					description = <"If true - prescription is renewable. If false - prescription is non-renewable.">
+				>
+				["at0119"] = <
+					text = <"Person">
+					description = <"Person">
+				>
+				["at0120"] = <
+					text = <"UPB">
+					description = <"The Office for Immigrants and Refugees">
+				>
+				["at0121"] = <
+					text = <"MO">
+					description = <"Department of Defense">
+				>
+				["at0122"] = <
+					text = <"Other">
+					description = <"Other">
+				>
+				["at0123"] = <
+					text = <"Treatment reason">
+					description = <"Reason for treatment. ">
+				>
+				["at0124"] = <
+					text = <"Disease">
+					description = <"*">
+				>
+				["at0125"] = <
+					text = <"Injury outside work">
+					description = <"*">
+				>
+				["at0126"] = <
+					text = <"Industrial disease">
+					description = <"*">
+				>
+				["at0127"] = <
+					text = <"Occupational injury">
+					description = <"*">
+				>
+				["at0128"] = <
+					text = <"Third - person injury">
+					description = <"*">
+				>
+				["at0129"] = <
+					text = <"Maximum dose exceeded">
+					description = <"Boolean if physician has prescribed dose that exceeds maximum recommended dose. ">
+				>
+				["at0130"] = <
+					text = <"Prescribed">
+					description = <"*">
+				>
+				["at0131"] = <
+					text = <"Partially used">
+					description = <"*">
+				>
+				["at0132"] = <
+					text = <"Partially used and cancelled">
+					description = <"*">
+				>
+				["at0133"] = <
+					text = <"Cancelled">
+					description = <"*">
+				>
+				["at0134"] = <
+					text = <"Used">
+					description = <"*">
+				>
+				["at0135"] = <
+					text = <"In preparation">
+					description = <"*">
+				>
+				["at0136"] = <
+					text = <"In dispense">
+					description = <"*">
+				>
+				["at0137"] = <
+					text = <"Supply duration">
+					description = <"Number of days for supply.">
+				>
+				["at0138"] = <
+					text = <"Supply quantity">
+					description = <"Number o prescribed packages fo supply.">
+				>
+				["at0139"] = <
+					text = <"Update timestamp">
+					description = <"Date and time when the last update or change has been made. ">
+				>
+				["at0140"] = <
+					text = <"Urgent">
+					description = <"Urgent prescription.">
+				>
+				["at0141"] = <
+					text = <"Rejected">
+					description = <"*">
+				>
+				["at0142"] = <
+					text = <"Withdrawn">
+					description = <"*">
+				>
+				["at0143"] = <
+					text = <"Partially used and rejected">
+					description = <"*">
+				>
+			>
+		>
+		["sl"] = <
+			items = <
+				["at0000"] = <
+					text = <"Podatki za avtorizacijo recepta">
+					description = <"Podrobni podatki, ki so potrebni za avtorizacijo eRecepta. ">
+				>
+				["at0025"] = <
+					text = <"Število ponovitev">
+					description = <"Število ponovitev recepta pri obnovljivih receptih. ">
+				>
+				["at0077"] = <
+					text = <"Vrsta listine">
+					description = <"Vrsta listine za predpis recepta, ki definira ali gre za plačljivi ali recept, ki ga krije obvezno in dodatno zdravstveno zavarovanje. ">
+				>
+				["at0080"] = <
+					text = <"Zeleni recept">
+					description = <"Recept, ki se krije iz obveznega in dodatnega zavarovanja.">
+				>
+				["at0081"] = <
+					text = <"Beli recept">
+					description = <"Plačljivi recept. ">
+				>
+				["at0082"] = <
+					text = <"Tip terapije">
+					description = <"Tip bolezni na katero se navezuje predpis recepta.">
+				>
+				["at0083"] = <
+					text = <"Akutna">
+					description = <"Akutna bolezen. ">
+				>
+				["at0084"] = <
+					text = <"Kronična">
+					description = <"Kronična bolezen.">
+				>
+				["at0085"] = <
+					text = <"Status recepta">
+					description = <"EER status recepta. ">
+				>
+				["at0086"] = <
+					text = <"Število preostalih ponovitev">
+					description = <"Število preostalih ponovitev pri obnovljivem receptu.">
+				>
+				["at0087"] = <
+					text = <"ID recepta">
+					description = <"ID posameznega recepta oz. predpisa zdravila. ">
+				>
+				["at0091"] = <
+					text = <"Tip predpisa">
+					description = <"Tip predpisa glede na izbiro oz. pripravo zdravila. ">
+				>
+				["at0092"] = <
+					text = <"Lastniško ime">
+					description = <"Predpis glede na lastniško ime iz šifranta CBZ.">
+				>
+				["at0093"] = <
+					text = <"Magistralni pripravek">
+					description = <"Predpis magistralnega pripravka.">
+				>
+				["at0094"] = <
+					text = <"INN">
+					description = <"Predpis glede na generično učinkovino. International Nonproprietary Name.">
+				>
+				["at0095"] = <
+					text = <"Način doplačila">
+					description = <"Način doplačila recepta. Neobvezno pri belem receptu.">
+				>
+				["at0096"] = <
+					text = <"Brez doplačila">
+					description = <"Brez doplačila.">
+				>
+				["at0097"] = <
+					text = <"Zavarovana oseba">
+					description = <"Zavarovana oseba. ">
+				>
+				["at0098"] = <
+					text = <"Zavarovalnica">
+					description = <"Zavarovalnica.">
+				>
+				["at0099"] = <
+					text = <"Proračun">
+					description = <"Proračun.">
+				>
+				["at0100"] = <
+					text = <"Plačnik">
+					description = <"Plačnik. ">
+				>
+				["at0106"] = <
+					text = <"Navodila farmacevtu">
+					description = <"Dodatna navodila farmacevtu glede priprave zdravila.">
+				>
+				["at0110"] = <
+					text = <"ID paketa receptov">
+					description = <"ID paketa receptov znotraj katerega je lahko eden ali več receptov.">
+				>
+				["at0111"] = <
+					text = <"Ne zamenjuj">
+					description = <"Zdravnik ne dovoli izdajo produkta z enako učinkovino. ">
+				>
+				["at0112"] = <
+					text = <"Preverjanje interakcij">
+					description = <"Preverjanje interakcij med zdravili na v istem paketu je bilo opravljeno. ">
+				>
+				["at0118"] = <
+					text = <"Obnovljiv">
+					description = <"True - recept je obnovljiv, False - recept ni obnovljiv.">
+				>
+				["at0119"] = <
+					text = <"Oseba">
+					description = <"Oseba.">
+				>
+				["at0120"] = <
+					text = <"UPB">
+					description = <"Urad za priseljence in begunce">
+				>
+				["at0121"] = <
+					text = <"MO">
+					description = <"Ministerstvo za obrambo">
+				>
+				["at0122"] = <
+					text = <"Drugo">
+					description = <"Drug plačnik.">
+				>
+				["at0123"] = <
+					text = <"Razlog obravnave">
+					description = <"Razlog za obravnavo.">
+				>
+				["at0124"] = <
+					text = <"Bolezen, prevenitva">
+					description = <"**(en)">
+				>
+				["at0125"] = <
+					text = <"Poškodba izven dela">
+					description = <"**(en)">
+				>
+				["at0126"] = <
+					text = <"Poklicna bolezen">
+					description = <"**(en)">
+				>
+				["at0127"] = <
+					text = <"Poškodba pri delu">
+					description = <"**(en)">
+				>
+				["at0128"] = <
+					text = <"Poškodba po 3. osebi izven dela">
+					description = <"**(en)">
+				>
+				["at0129"] = <
+					text = <"Prekoračitve maksimalnega odmerka">
+					description = <"Zdravnik zavestno želi predpisati odmerek, ki je večji od maksimalnega odmerka.">
+				>
+				["at0130"] = <
+					text = <"Predpisan">
+					description = <"**(en)">
+				>
+				["at0131"] = <
+					text = <"Delno porabljen">
+					description = <"**(en)">
+				>
+				["at0132"] = <
+					text = <"Delno porabljen in razveljavljen">
+					description = <"**(en)">
+				>
+				["at0133"] = <
+					text = <"Razveljavljen">
+					description = <"**(en)">
+				>
+				["at0134"] = <
+					text = <"Porabljen">
+					description = <"**(en)">
+				>
+				["at0135"] = <
+					text = <"V pripravi">
+					description = <"**(en)">
+				>
+				["at0136"] = <
+					text = <"V izdajanju">
+					description = <"**(en)">
+				>
+				["at0137"] = <
+					text = <"Število dni jemanja">
+					description = <"Število dni jemanja predpisanih zdravil.">
+				>
+				["at0138"] = <
+					text = <"Število predpisanih pakiranj">
+					description = <"Število predpisanih pakiranj za jemanje zdravila.">
+				>
+				["at0139"] = <
+					text = <"Čas posodobitve">
+					description = <"Datum in čas zadnje posodobitve oz spremembe. ">
+				>
+				["at0140"] = <
+					text = <"Nujno">
+					description = <"Oznaka nujnosti.">
+				>
+				["at0141"] = <
+					text = <"Zavrnjen">
+					description = <"*">
+				>
+				["at0142"] = <
+					text = <"Umaknjen">
+					description = <"*">
+				>
+				["at0143"] = <
+					text = <"Delno porabljen zavrnjen">
+					description = <"*">
+				>
+			>
+		>
+	>

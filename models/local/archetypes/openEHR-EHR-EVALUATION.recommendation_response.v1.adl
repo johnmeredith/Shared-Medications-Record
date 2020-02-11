@@ -1,0 +1,122 @@
+archetype (adl_version=1.4; uid=1fdafce5-01dc-3273-9a1f-2598368fe458)
+	openEHR-EHR-EVALUATION.recommendation_response.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["date"] = <"2015-03-18">
+		["name"] = <"Ian McNicoll">
+		["organisation"] = <"HANDIHealth,UK">
+		["email"] = <"ian@handihealth.org">
+	>
+	lifecycle_state = <"AuthorDraft">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record details of a foral response to a clinical recommendation.">
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"EDED4A8FD7DB851144A9E0DB37E4E56E">
+		["build_uid"] = <"e6405b19-6ecc-379e-a694-83d80baa865c">
+	>
+
+definition
+	EVALUATION[at0000] matches {    -- Recommendation response
+		data matches {
+			ITEM_TREE[at0001] matches {    -- Tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0002] occurrences matches {0..1} matches {    -- Response
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0006,    -- Accepted in full
+									at0007,    -- Partially accepted
+									at0008,    -- Rejected
+									at0009]    -- Further discussion required
+								}
+							}
+						}
+					}
+					ELEMENT[at0005] occurrences matches {0..1} matches {    -- Comment
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0003] matches {    -- Tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0004] occurrences matches {0..1} matches {    -- Original recommendation entry
+						value matches {
+							DV_URI matches {*}
+						}
+					}
+					allow_archetype CLUSTER[at0010] occurrences matches {0..*} matches {    -- Extension
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Recommendation response">
+					description = <"A formal response to a clinical recommendation.">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Response">
+					description = <"A formal, structured response to the recommendation.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Original recommendation entry">
+					description = <"A link to the original recommendation record.">
+				>
+				["at0005"] = <
+					text = <"Comment">
+					description = <"A narrative comment in response to the recommendation.">
+				>
+				["at0006"] = <
+					text = <"Accepted in full">
+					description = <"The recommendation has been fully accepted.">
+				>
+				["at0007"] = <
+					text = <"Partially accepted">
+					description = <"The recommendation has been partially accepted.">
+				>
+				["at0008"] = <
+					text = <"Rejected">
+					description = <"The recommendation has been rejected.">
+				>
+				["at0009"] = <
+					text = <"Further discussion required">
+					description = <"Further discussion is required.">
+				>
+				["at0010"] = <
+					text = <"Extension">
+					description = <"*">
+				>
+			>
+		>
+	>

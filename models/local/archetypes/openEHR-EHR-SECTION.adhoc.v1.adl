@@ -1,0 +1,67 @@
+archetype (adl_version=1.4; uid=f2555dce-ca88-3859-b722-f764a695c41b)
+	openEHR-EHR-SECTION.adhoc.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["sl"] = <
+			language = <[ISO_639-1::sl]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"17/03/2010">
+		["name"] = <"Dr Ian McNicoll">
+		["organisation"] = <"Ocean Informatics, United Kingdom">
+		["email"] = <"ian.mcnicoll@oceaninformatics.com">
+	>
+	lifecycle_state = <"AuthorDraft">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"A generic section header which is normally renamed locally at template level.">
+			copyright = <"copyright (c) 2010 openEHR Foundation">
+			use = <"To construct and name a section within a local template.">
+		>
+		["sl"] = <
+			language = <[ISO_639-1::sl]>
+			purpose = <"*A generic section header which is normally renamed locally at template level.(en)">
+			copyright = <"*copyright (c) 2010 openEHR Foundation(en)">
+			use = <"*To construct and name a section within a local template.(en)">
+			misuse = <"*(en)">
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"8A5D53F1CDACBFD7419D875FE9A5E50A">
+		["build_uid"] = <"c4bdab96-cb57-369f-ac17-3822f4549586">
+	>
+
+definition
+	SECTION[at0000] matches {*}    -- Adhoc heading
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Adhoc heading">
+					description = <"A generic section header.">
+				>
+			>
+		>
+		["sl"] = <
+			items = <
+				["at0000"] = <
+					text = <"Naslov sekcije">
+					description = <"Naslov sekcije">
+				>
+			>
+		>
+	>
