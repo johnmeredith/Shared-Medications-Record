@@ -19,7 +19,8 @@
       "original_namespace" : "org.openehr",
       "original_publisher" : "openEHR Foundation",
       "custodian_namespace" : "org.openehr",
-      "MD5-CAM-1.0.1" : "3fe1b54e7aec78f318f7fa4697d9d7f3"
+      "MD5-CAM-1.0.1" : "4388fa3f59a1705a166eaf882f6c3f91",
+      "PARENT:MD5-CAM-1.0.1" : "28E4C831B12298DF5E43EDC5480646F7"
     },
     "details" : {
       "en" : {
@@ -251,7 +252,9 @@
       "ipAcknowledgements" : { },
       "references" : { },
       "conversionDetails" : { },
-      "otherDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "b00ac75bc1d0d9570fd625e9b48f4ffc"
+      },
       "details" : {
         "en" : {
           "@type" : "RESOURCE_DESCRIPTION_ITEM",
@@ -616,7 +619,7 @@
       "references" : { },
       "conversionDetails" : { },
       "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "ADAD488D3CC144486612C75F4E995F94"
+        "PARENT:MD5-CAM-1.0.1" : "8A5D53F1CDACBFD7419D875FE9A5E50A"
       },
       "details" : {
         "sl" : {
@@ -775,7 +778,9 @@
       "ipAcknowledgements" : { },
       "references" : { },
       "conversionDetails" : { },
-      "otherDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "DBFB0DBF33CA7E4301E8502007853229"
+      },
       "details" : {
         "sl" : {
           "@type" : "RESOURCE_DESCRIPTION_ITEM",
@@ -867,7 +872,9 @@
       "ipAcknowledgements" : { },
       "references" : { },
       "conversionDetails" : { },
-      "otherDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "25C16B28A60F9903D55831244227C979"
+      },
       "details" : {
         "en" : {
           "@type" : "RESOURCE_DESCRIPTION_ITEM",
@@ -1494,7 +1501,9 @@
       "ipAcknowledgements" : { },
       "references" : { },
       "conversionDetails" : { },
-      "otherDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "EDED4A8FD7DB851144A9E0DB37E4E56E"
+      },
       "details" : {
         "en" : {
           "@type" : "RESOURCE_DESCRIPTION_ITEM",
