@@ -22,7 +22,7 @@
       "original_namespace" : "org.openehr",
       "original_publisher" : "openEHR Foundation",
       "custodian_namespace" : "org.openehr",
-      "MD5-CAM-1.0.1" : "9b0aa483bc4350c4b62a8b256b178acb",
+      "MD5-CAM-1.0.1" : "f45ec8475968551d7d6c303cb6d488e3",
       "PARENT:MD5-CAM-1.0.1" : "FC27CA9802E3608CB3E7FF598A6E6032"
     },
     "details" : {
@@ -196,7 +196,7 @@
   "rmName" : "openehr",
   "rmRelease" : "1.0.3",
   "generated" : true,
-  "templateId" : "openEHR-EHR-COMPOSITION_NWIS-DAL-Medication-order.v0",
+  "templateId" : "NWIS DAL Medication Order",
   "otherMetaData" : { },
   "templateOverlays" : [ {
     "@type" : "TEMPLATE_OVERLAY",
