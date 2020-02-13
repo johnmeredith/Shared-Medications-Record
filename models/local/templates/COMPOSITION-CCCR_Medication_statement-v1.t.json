@@ -19,7 +19,7 @@
       "original_namespace" : "uk.org.apperta",
       "original_publisher" : "Apperta Foundation",
       "custodian_namespace" : "uk.org.apperta",
-      "MD5-CAM-1.0.1" : "2d2d5841ec8e9514fd1bbfd17fa1ac64",
+      "MD5-CAM-1.0.1" : "1a7cec87ea719fef43c9740fd3bf833d",
       "PARENT:MD5-CAM-1.0.1" : "FC27CA9802E3608CB3E7FF598A6E6032",
       "semver_string" : "0.1.1"
     },
@@ -188,7 +188,7 @@
   "rmName" : "openehr",
   "rmRelease" : "1.0.3",
   "generated" : true,
-  "templateId" : "NWIS Medication Statement",
+  "templateId" : "NWIS Medication Statement.v0",
   "otherMetaData" : { },
   "templateOverlays" : [ {
     "@type" : "TEMPLATE_OVERLAY",
