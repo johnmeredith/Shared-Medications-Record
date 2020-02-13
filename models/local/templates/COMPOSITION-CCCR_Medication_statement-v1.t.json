@@ -56,7 +56,7 @@
           },
           "codeString" : "en"
         },
-        "purpose" : "This composition captures a statement of medication listed by an external system, such as IHR, Chemocare, T-MED. Typically this will be a list of medication orders with additional information such as the status of that order, current authorisation details and other significant dates, dependent on the source system.",
+        "purpose" : "This composition captures a statement of medication listed by an external system, such as IHR, Chemocare, MTED. Typically this will be a list of medication orders with additional information such as the status of that order, current authorisation details and other significant dates, dependent on the source system.",
         "keywords" : [ ],
         "misuse" : "This template should not be used to represent an actual medication order or subsequent parts of the medication supply cycle.",
         "copyright" : "Apperta Foundation",
