@@ -8,7 +8,7 @@
     },
     "otherContributors" : [ ],
     "lifecycleState" : {
-      "codeString" : "unmanaged"
+      "codeString" : "in_development"
     },
     "ipAcknowledgements" : { },
     "references" : { },
@@ -19,7 +19,7 @@
       "original_namespace" : "uk.org.apperta",
       "original_publisher" : "Apperta Foundation",
       "custodian_namespace" : "uk.org.apperta",
-      "MD5-CAM-1.0.1" : "c60b9c3a7be4058c82c33da49ad855d0",
+      "MD5-CAM-1.0.1" : "2d2d5841ec8e9514fd1bbfd17fa1ac64",
       "PARENT:MD5-CAM-1.0.1" : "FC27CA9802E3608CB3E7FF598A6E6032",
       "semver_string" : "0.1.1"
     },
@@ -188,7 +188,7 @@
   "rmName" : "openehr",
   "rmRelease" : "1.0.3",
   "generated" : true,
-  "templateId" : "openEHR-EHR-COMPOSITION_NWIS-medication-statement.v0",
+  "templateId" : "NWIS Medication Statement",
   "otherMetaData" : { },
   "templateOverlays" : [ {
     "@type" : "TEMPLATE_OVERLAY",
@@ -2615,23 +2615,6 @@
           "nodeId" : "at0002.1",
           "attributes" : [ {
             "@type" : "C_ATTRIBUTE",
-            "rmAttributeName" : "value",
-            "children" : [ {
-              "@type" : "C_COMPLEX_OBJECT",
-              "rmTypeName" : "DV_DATE_TIME",
-              "attributes" : [ {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "value",
-                "children" : [ {
-                  "@type" : "C_DATE_TIME",
-                  "rmTypeName" : "DATE_TIME",
-                  "constraint" : [ ]
-                } ]
-              } ],
-              "attributeTuples" : [ ]
-            } ]
-          }, {
-            "@type" : "C_ATTRIBUTE",
             "rmAttributeName" : "name",
             "children" : [ {
               "@type" : "C_COMPLEX_OBJECT",
@@ -2648,6 +2631,23 @@
                   },
                   "constraint" : [ "ac0.51" ],
                   "selectedTerminologies" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          }, {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_DATE_TIME",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "children" : [ {
+                  "@type" : "C_DATE_TIME",
+                  "rmTypeName" : "DATE_TIME",
+                  "constraint" : [ ]
                 } ]
               } ],
               "attributeTuples" : [ ]
