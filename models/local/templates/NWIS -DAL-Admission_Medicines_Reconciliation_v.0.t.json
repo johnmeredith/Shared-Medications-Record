@@ -11,7 +11,7 @@
     },
     "otherContributors" : [ ],
     "lifecycleState" : {
-      "codeString" : "unmanaged"
+      "codeString" : "in_development"
     },
     "ipAcknowledgements" : { },
     "references" : { },
@@ -22,7 +22,7 @@
       "original_namespace" : "org.openehr",
       "original_publisher" : "openEHR Foundation",
       "custodian_namespace" : "org.openehr",
-      "MD5-CAM-1.0.1" : "8d0b6c672119c0685c19d634f5f4db69",
+      "MD5-CAM-1.0.1" : "9b0aa483bc4350c4b62a8b256b178acb",
       "PARENT:MD5-CAM-1.0.1" : "FC27CA9802E3608CB3E7FF598A6E6032"
     },
     "details" : {
@@ -1713,7 +1713,7 @@
       "references" : { },
       "conversionDetails" : { },
       "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "CBCDC59B0B6E1A4E7C84FE667290BFD7"
+        "PARENT:MD5-CAM-1.0.1" : "1106dd8c7cef747a498cd3db271cd170"
       },
       "details" : {
         "nb" : {
@@ -1837,7 +1837,7 @@
       "references" : { },
       "conversionDetails" : { },
       "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "278bc3c2f4edadb93c873090a1bdab1f"
+        "PARENT:MD5-CAM-1.0.1" : "56c4e78cc21ec38f4dfab7525c76b51f"
       },
       "details" : {
         "nb" : {
@@ -2470,7 +2470,7 @@
       "references" : { },
       "conversionDetails" : { },
       "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "52EE4E6F405A92ADAAE5C33293DAA685"
+        "PARENT:MD5-CAM-1.0.1" : "f147e87caf9f55bed1c07b5273bdc9af"
       },
       "details" : {
         "nb" : {
@@ -2648,7 +2648,7 @@
       "references" : { },
       "conversionDetails" : { },
       "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "19328C6E85A1CAE39D2522FF43F1A104"
+        "PARENT:MD5-CAM-1.0.1" : "ea86571441a8b0596681febbf77e7a5e"
       },
       "details" : {
         "es-ar" : {
@@ -3698,7 +3698,7 @@
       "references" : { },
       "conversionDetails" : { },
       "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "ADAD488D3CC144486612C75F4E995F94"
+        "PARENT:MD5-CAM-1.0.1" : "8A5D53F1CDACBFD7419D875FE9A5E50A"
       },
       "details" : {
         "ru" : {
