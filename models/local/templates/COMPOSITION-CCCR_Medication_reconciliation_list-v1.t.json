@@ -22,7 +22,7 @@
       "original_namespace" : "org.openehr",
       "original_publisher" : "openEHR Foundation",
       "custodian_namespace" : "org.openehr",
-      "MD5-CAM-1.0.1" : "83296a44fc736f48402c33be8503f96a",
+      "MD5-CAM-1.0.1" : "1af5b14526b5a4366c07b28127ad18a0",
       "PARENT:MD5-CAM-1.0.1" : "FC27CA9802E3608CB3E7FF598A6E6032"
     },
     "details" : {
@@ -197,7 +197,7 @@
   "rmName" : "openehr",
   "rmRelease" : "1.0.3",
   "generated" : true,
-  "templateId" : "NWIS Medication Reconciliation List",
+  "templateId" : "NWIS Medication Reconciliation List.v0",
   "otherMetaData" : { },
   "templateOverlays" : [ {
     "@type" : "TEMPLATE_OVERLAY",
