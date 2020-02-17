@@ -1,0 +1,574 @@
+archetype (adl_version=1.4; uid=7f8f7c7c-ad48-3b06-8a8e-b7362fac2174)
+	openEHR-EHR-EVALUATION.pharmacy_meds_review.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["sl"] = <
+			language = <[ISO_639-1::sl]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2015-03-18">
+		["name"] = <"Ian McNicoll">
+		["organisation"] = <"HANDIHealth,UK">
+		["email"] = <"ian@handihealth.org">
+	>
+	lifecycle_state = <"AuthorDraft">
+	other_contributors = <"Keith Farrar, Intelligent Care Solutions, UK", ...>
+	details = <
+		["sl"] = <
+			language = <[ISO_639-1::sl]>
+			purpose = <"*Details of review of the current  medication list by a pharmacist.(en)">
+			keywords = <"*pharrmacist(en)","*Medication(en)","*safety(en)">
+			copyright = <"*(en)">
+			use = <"*(en)">
+			misuse = <"*(en)">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"Details of review of the current  medication list by a pharmacist.">
+			keywords = <"pharrmacist","Medication","safety">
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"b00ac75bc1d0d9570fd625e9b48f4ffc">
+		["build_uid"] = <"f2c9228f-c9b8-322a-b5fb-efa87d2bafd2">
+	>
+
+definition
+	EVALUATION[at0000] matches {    -- Pharmacist medication review
+		data matches {
+			ITEM_TREE[at0001] matches {    -- Tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0052] occurrences matches {0..1} matches {    -- Medication list category
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0053,    -- Admission
+									at0054,    -- Inpatient
+									at0055,    -- Outpatient
+									at0056,    -- Discharge
+									at0059]    -- Short-term leave
+								}
+							}
+						}
+					}
+					CLUSTER[at0002] occurrences matches {0..*} matches {    -- Medication item assessment
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0004] occurrences matches {0..*} matches {    -- Related medication item
+								value matches {
+									DV_EHR_URI matches {*}
+								}
+							}
+							ELEMENT[at0003] occurrences matches {0..1} matches {    -- No problem identified
+								value matches {
+									DV_BOOLEAN matches {
+										value matches {true}
+									}
+								}
+							}
+							ELEMENT[at0064] occurrences matches {0..1} matches {    -- Overall recommendation
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							CLUSTER[at0007] occurrences matches {0..*} matches {    -- Drug-related problem
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0008] occurrences matches {0..*} matches {    -- Category
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0005,    -- No indication
+													at0006,    -- Untreated medical condition
+													at0031,    -- Possible ADR/allergy/intolerance
+													at0032,    -- Potentially significant drug interaction
+													at0033,    -- Deviates from formulary/policy/protocol
+													at0034]    -- Unlicensed use
+												}
+											}
+										}
+									}
+									ELEMENT[at0009] occurrences matches {0..1} matches {    -- Outcome
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0023,    -- Enhanced therapeutic effect
+													at0024,    -- Prevent ADR / toxicity
+													at0025,    -- Adherence to policy/protocol
+													at0057,    -- Improved acceptability to patient
+													at0058,    -- Reduce cost
+													at0065]    -- Rationalise prescription
+												}
+											}
+										}
+									}
+									ELEMENT[at0011] occurrences matches {0..1} matches {    -- Impact
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0026,    -- High
+													at0027,    -- Moderate
+													at0028]    -- Low
+												}
+											}
+										}
+									}
+									ELEMENT[at0010] occurrences matches {0..1} matches {    -- Recommendation
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+							CLUSTER[at0029] occurrences matches {0..*} matches {    -- Pharmacokinetic issue
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0030] occurrences matches {0..*} matches {    -- Category
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0035,    -- Dose
+													at0036,    -- Frequency
+													at0037,    -- Route
+													at0044,    -- Rate of administration
+													at0045,    -- Formulation
+													at0046]    -- Timing of administration
+												}
+											}
+										}
+									}
+									use_node ELEMENT occurrences matches {0..1} /data[at0001]/items[at0002]/items[at0007]/items[at0009]
+									use_node ELEMENT occurrences matches {0..1} /data[at0001]/items[at0002]/items[at0007]/items[at0011]
+									use_node ELEMENT occurrences matches {0..1} /data[at0001]/items[at0002]/items[at0007]/items[at0010]
+								}
+							}
+							CLUSTER[at0038] occurrences matches {0..*} matches {    -- Patient related problem
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0039] occurrences matches {0..*} matches {    -- Category
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0047,    -- Non-adherence due to patient choice
+													at0048,    -- Non-adherence due to patient capability
+													at0049,    -- Patient may benefit from additional education
+													at0051]    -- Other
+												}
+											}
+										}
+									}
+									use_node ELEMENT occurrences matches {0..1} /data[at0001]/items[at0002]/items[at0007]/items[at0009]
+									use_node ELEMENT occurrences matches {0..1} /data[at0001]/items[at0002]/items[at0007]/items[at0011]
+									use_node ELEMENT occurrences matches {0..1} /data[at0001]/items[at0002]/items[at0007]/items[at0010]
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0066] matches {*}    -- ItemTree
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Pharmacist medication review">
+					description = <"Details of review of the current  medication list by a pharmacist.">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Medication item assessment">
+					description = <"Details of a pharmacy assessment for a sngle medicaion item.">
+				>
+				["at0003"] = <
+					text = <"No problem identified">
+					description = <"True if any problem ,issue or error was identified for the medication.">
+				>
+				["at0004"] = <
+					text = <"Related medication item">
+					description = <"A link to the original medication item.">
+				>
+				["at0007"] = <
+					text = <"Drug-related problem">
+					description = <"Details of a drug-related problem.">
+				>
+				["at0008"] = <
+					text = <"Category">
+					description = <"The category of drug-related problem.">
+				>
+				["at0009"] = <
+					text = <"Outcome">
+					description = <"The expected outcome of the suggested intervention.">
+				>
+				["at0010"] = <
+					text = <"Recommendation">
+					description = <"A narrative description of the recommended action.">
+				>
+				["at0011"] = <
+					text = <"Impact">
+					description = <"The impact of the recommendation on the patient's health.">
+				>
+				["at0023"] = <
+					text = <"Enhanced therapeutic effect">
+					description = <"Enhanced therapeutic effect">
+				>
+				["at0024"] = <
+					text = <"Prevent ADR / toxicity">
+					description = <"Prevent ADR / toxicity">
+				>
+				["at0025"] = <
+					text = <"Adherence to policy/protocol">
+					description = <"Adherence to policy/protocol">
+				>
+				["at0026"] = <
+					text = <"High">
+					description = <"High">
+				>
+				["at0027"] = <
+					text = <"Moderate">
+					description = <"Moderate">
+				>
+				["at0028"] = <
+					text = <"Low">
+					description = <"Low">
+				>
+				["at0029"] = <
+					text = <"Pharmacokinetic issue">
+					description = <"Pharmacokinetic related issue.">
+				>
+				["at0030"] = <
+					text = <"Category">
+					description = <"The category of pharmacokinetic issue.">
+				>
+				["at0038"] = <
+					text = <"Patient related problem">
+					description = <"Details of a problem related to patient factors.">
+				>
+				["at0039"] = <
+					text = <"Category">
+					description = <"The category of problem related to patient factors.">
+				>
+				["at0052"] = <
+					text = <"Medication list category">
+					description = <"The category of medication list which is being reviewed.">
+				>
+				["at0053"] = <
+					text = <"Admission">
+					description = <"A list of medication at admission is being reviewed.">
+				>
+				["at0054"] = <
+					text = <"Inpatient">
+					description = <"The list of current inpatient medications is being reviewed.">
+				>
+				["at0055"] = <
+					text = <"Outpatient">
+					description = <"The list of current outpatient medications is being reviewed..">
+				>
+				["at0056"] = <
+					text = <"Discharge">
+					description = <"The list of discharge / transfer of care medications is being reviewed.">
+				>
+				["at0059"] = <
+					text = <"Short-term leave">
+					description = <"Short-term leave medication list.">
+				>
+				["at0064"] = <
+					text = <"Overall recommendation">
+					description = <"An overall recommendation.">
+				>
+				["at0005"] = <
+					text = <"No indication">
+					description = <"No indication">
+				>
+				["at0006"] = <
+					text = <"Untreated medical condition">
+					description = <"Untreated medical condition">
+				>
+				["at0031"] = <
+					text = <"Possible ADR/allergy/intolerance">
+					description = <"Possible ADR/allergy/intolerance">
+				>
+				["at0032"] = <
+					text = <"Potentially significant drug interaction">
+					description = <"Potentially significant drug interaction">
+				>
+				["at0033"] = <
+					text = <"Deviates from formulary/policy/protocol">
+					description = <"Deviates from formulary/policy/protocol">
+				>
+				["at0034"] = <
+					text = <"Unlicensed use">
+					description = <"Unlicensed use">
+				>
+				["at0035"] = <
+					text = <"Dose">
+					description = <"Dose">
+				>
+				["at0036"] = <
+					text = <"Frequency">
+					description = <"Frequency">
+				>
+				["at0037"] = <
+					text = <"Route">
+					description = <"Route">
+				>
+				["at0044"] = <
+					text = <"Rate of administration">
+					description = <"Rate of administration">
+				>
+				["at0045"] = <
+					text = <"Formulation">
+					description = <"Formulation">
+				>
+				["at0046"] = <
+					text = <"Timing of administration">
+					description = <"Timing of administration">
+				>
+				["at0047"] = <
+					text = <"Non-adherence due to patient choice">
+					description = <"Non-adherence due to patient choice">
+				>
+				["at0048"] = <
+					text = <"Non-adherence due to patient capability">
+					description = <"Non-adherence due to patient capability">
+				>
+				["at0049"] = <
+					text = <"Patient may benefit from additional education">
+					description = <"Patient may benefit from additional education">
+				>
+				["at0051"] = <
+					text = <"Other">
+					description = <"Other">
+				>
+				["at0057"] = <
+					text = <"Improved acceptability to patient">
+					description = <"Improved acceptability to patient">
+				>
+				["at0058"] = <
+					text = <"Reduce cost">
+					description = <"Reduce cost">
+				>
+				["at0065"] = <
+					text = <"Rationalise prescription">
+					description = <"Rationalise prescription">
+				>
+				["at0066"] = <
+					text = <"ItemTree">
+					description = <"@ internal @">
+				>
+			>
+		>
+		["sl"] = <
+			items = <
+				["at0000"] = <
+					text = <"Mnenje farmacevta">
+					description = <"*Details of review of the current  medication list by a pharmacist.(en)">
+				>
+				["at0001"] = <
+					text = <"*Tree(en)">
+					description = <"*@ internal @(en)">
+				>
+				["at0002"] = <
+					text = <"Mnenje farmacevta za izbran predpis">
+					description = <"Podrobnosti mnenja farmacevta za posamezen predpis.">
+				>
+				["at0003"] = <
+					text = <"Ugotovljena tezava">
+					description = <"\"True\" samo v primeru, ko je farmacevt za predpis ugotovil odstopanja.">
+				>
+				["at0004"] = <
+					text = <"Osnovni predpis zdravila">
+					description = <"Link do dejanskega predpisa">
+				>
+				["at0007"] = <
+					text = <"Tezava povezana z zdravilom">
+					description = <"Tezava povezana z zdravilom (DRP)">
+				>
+				["at0008"] = <
+					text = <"Kategorija">
+					description = <"*The category of drug-related problem.(en)">
+				>
+				["at0009"] = <
+					text = <"Izid">
+					description = <"*The expected outcome of the suggested intervention.(en)">
+				>
+				["at0010"] = <
+					text = <"Priporočilo">
+					description = <"*A narrative description of the recommended action.(en)">
+				>
+				["at0011"] = <
+					text = <"Vpliv">
+					description = <"*The impact of the recommendation on the patient's health.(en)">
+				>
+				["at0023"] = <
+					text = <"*Cost savings only(en)">
+					description = <"*The recommendation is likely to lead to cost-savings only.(en)">
+				>
+				["at0024"] = <
+					text = <"*Potential ADR / toxicity prevented(en)">
+					description = <"*The recommendation is expected to prevent an adverse drug reaction or patient toxicity.(en)">
+				>
+				["at0025"] = <
+					text = <"*Enhanced therapeutic effect(en)">
+					description = <"*The recommendation is likely to result in an enhanced therapeutic effect.(en)">
+				>
+				["at0026"] = <
+					text = <"*Potentially severe / high clinical significance(en)">
+					description = <"*The issue has a highly significant impact on the patient's health.(en)">
+				>
+				["at0027"] = <
+					text = <"*Important / moderate clinical significance(en)">
+					description = <"*The issue has a moderately significant impact on the patient's health.(en)">
+				>
+				["at0028"] = <
+					text = <"*Minor / low clinical significance(en)">
+					description = <"*The issue has a low impact on the patient's health.(en)">
+				>
+				["at0029"] = <
+					text = <"*Pharmacokinetic issue(en)">
+					description = <"*Pharmacokinetic related issue.(en)">
+				>
+				["at0030"] = <
+					text = <"Kategorija">
+					description = <"*The category of pharmacokinetic issue.(en)">
+				>
+				["at0038"] = <
+					text = <"Težava povezana s kliničnim stanjem pacienta">
+					description = <"Tezave pri predpisani terapiji, ki izvirajo iz kliničnega stanjapacienta.">
+				>
+				["at0039"] = <
+					text = <"Kategorija">
+					description = <"*The category of problem related to patient factors.(en)">
+				>
+				["at0052"] = <
+					text = <"Kategorija">
+					description = <"Kategorija mnenja farmacevta glede na tip predpisa za katerga farmacevt pripravlja mnenje.">
+				>
+				["at0053"] = <
+					text = <"Sprejem">
+					description = <"Mnenje farmacevta za prvi predpis terapij ob sprejemu v bolnisnico">
+				>
+				["at0054"] = <
+					text = <"Predpis tekom hospitalizacije">
+					description = <"Mnenje farmacevta za seznam terapij, ki so predpisane za hospitaliziranega pacienta">
+				>
+				["at0055"] = <
+					text = <"Ambulanta">
+					description = <"Mnenje farmacevta za predpisane terapije tekom ambulantnega obiska.">
+				>
+				["at0056"] = <
+					text = <"Odpust">
+					description = <"Mnenje farmacevta za zdravila na odpustu">
+				>
+				["at0059"] = <
+					text = <"Zacasni odpust">
+					description = <"Mnenje farmacevta za zdravila perdpisana ob zacasnem odpustu iz hospitalizacije">
+				>
+				["at0064"] = <
+					text = <"Mnenje farmacevta">
+					description = <"Mnenje farmacevta">
+				>
+				["at0005"] = <
+					text = <"*No indication (en)">
+					description = <"*No indication (en)">
+				>
+				["at0006"] = <
+					text = <"*Untreated medical condition (en)">
+					description = <"*Untreated medical condition (en)">
+				>
+				["at0031"] = <
+					text = <"*Possible ADR/allergy/intolerance (en)">
+					description = <"*Possible ADR/allergy/intolerance (en)">
+				>
+				["at0032"] = <
+					text = <"*Potentially significant drug interaction (en)">
+					description = <"*Potentially significant drug interaction (en)">
+				>
+				["at0033"] = <
+					text = <"*Deviates from formulary/policy/protocol (en)">
+					description = <"*Deviates from formulary/policy/protocol (en)">
+				>
+				["at0034"] = <
+					text = <"*Unlicensed use (en)">
+					description = <"*Unlicensed use (en)">
+				>
+				["at0035"] = <
+					text = <"*Dose (en)">
+					description = <"*Dose (en)">
+				>
+				["at0036"] = <
+					text = <"*Frequency (en)">
+					description = <"*Frequency (en)">
+				>
+				["at0037"] = <
+					text = <"*Route (en)">
+					description = <"*Route (en)">
+				>
+				["at0044"] = <
+					text = <"*Rate of administration (en)">
+					description = <"*Rate of administration (en)">
+				>
+				["at0045"] = <
+					text = <"*Formulation (en)">
+					description = <"*Formulation (en)">
+				>
+				["at0046"] = <
+					text = <"*Timing of administration (en)">
+					description = <"*Timing of administration (en)">
+				>
+				["at0047"] = <
+					text = <"*Non-adherence due to patient choice (en)">
+					description = <"*Non-adherence due to patient choice (en)">
+				>
+				["at0048"] = <
+					text = <"*Non-adherence due to patient capability (en)">
+					description = <"*Non-adherence due to patient capability (en)">
+				>
+				["at0049"] = <
+					text = <"*Patient may benefit from additional (en)">
+					description = <"*Patient may benefit from additional  (en)">
+				>
+				["at0051"] = <
+					text = <"*Other (en)">
+					description = <"*Other (en)">
+				>
+				["at0057"] = <
+					text = <"*Improved acceptability to patient (en)">
+					description = <"*Improved acceptability to patient (en)">
+				>
+				["at0058"] = <
+					text = <"*Reduce cost (en)">
+					description = <"*Reduce cost (en)">
+				>
+				["at0065"] = <
+					text = <"*Rationalise prescription (en)">
+					description = <"*Rationalise prescription (en)">
+				>
+				["at0066"] = <
+					text = <"ItemTree">
+					description = <"@ internal @">
+				>
+			>
+		>
+	>

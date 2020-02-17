@@ -1,0 +1,214 @@
+archetype (adl_version=1.4; uid=b08fde1f-c3b5-381b-9960-4a68bcd81e57)
+	openEHR-EHR-ACTION.medication_supply_uk.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["sl"] = <
+			language = <[ISO_639-1::sl]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2015-03-22">
+		["name"] = <"Ian McNicoll">
+		["organisation"] = <"HANDIHealth,UK">
+		["email"] = <"ian@handihealth.org">
+	>
+	lifecycle_state = <"NotSet">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record details of inpatient medication supply.">
+			keywords = <"medication", ...>
+		>
+		["sl"] = <
+			language = <[ISO_639-1::sl]>
+			purpose = <"*To record details of inpatient medication supply.(en)">
+			keywords = <"*medication(en)", ...>
+			copyright = <"*(en)">
+			use = <"*(en)">
+			misuse = <"*(en)">
+		>
+	>
+	other_details = <
+		["current_contact"] = <"Ian McNicoll, HANDIHealth,UK, ian@handihealth.org">
+		["MD5-CAM-1.0.1"] = <"DBFB0DBF33CA7E4301E8502007853229">
+		["build_uid"] = <"6f451ad8-b8ef-3c80-b0c6-20480ea5b9ce">
+	>
+
+definition
+	ACTION[at0000] matches {    -- Inpatient medication supply
+		ism_transition matches {
+			ISM_TRANSITION[at0007] matches {    -- Supply requested
+				current_state matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[openehr::529]
+						}
+					}
+				}
+				careflow_step matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::at0007]    -- Supply requested
+						}
+					}
+				}
+			}
+			ISM_TRANSITION[at0006] matches {    -- Dispensed
+				current_state matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[openehr::532]
+						}
+					}
+				}
+				careflow_step matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::at0006]    -- Dispensed
+						}
+					}
+				}
+			}
+		}
+		description matches {
+			ITEM_TREE[at0001] matches {    -- Tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0004] occurrences matches {0..1} matches {    -- Link to medication order
+						value matches {
+							DV_EHR_URI matches {*}
+						}
+					}
+					ELEMENT[at0008] occurrences matches {0..1} matches {    -- Supply category
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0009,    -- Ward stock
+									at0010,    -- Non-stock
+									at0011,    -- Patient own supply
+									at0012]    -- One stop dispensing
+								}
+							}
+						}
+					}
+					ELEMENT[at0003] occurrences matches {0..1} matches {    -- Supply duration
+						value matches {
+							DV_DURATION matches {
+								value matches {PD/|>=PT0S|}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Inpatient medication supply">
+					description = <"Inpatient medication supply details.">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0003"] = <
+					text = <"Supply duration">
+					description = <"The number of days of medication which should be supplied, or is already available, in the case of patient 's own supply.">
+				>
+				["at0004"] = <
+					text = <"Link to medication order">
+					description = <"Link to the original medication record.">
+				>
+				["at0006"] = <
+					text = <"Dispensed">
+					description = <"The medication supply has been dispensed.">
+				>
+				["at0007"] = <
+					text = <"Supply requested">
+					description = <"The medication supply has been requested.">
+				>
+				["at0008"] = <
+					text = <"Supply category">
+					description = <"The category of medication supply required.">
+				>
+				["at0009"] = <
+					text = <"Ward stock">
+					description = <"The medication is supplied from ward stock.">
+				>
+				["at0010"] = <
+					text = <"Non-stock">
+					description = <"The medication is not supplied from ward stock.">
+				>
+				["at0011"] = <
+					text = <"Patient own supply">
+					description = <"The medication is available from the patient's own supply.">
+				>
+				["at0012"] = <
+					text = <"One stop dispensing">
+					description = <"The medication is supplied to allow the patient to take home.">
+				>
+			>
+		>
+		["sl"] = <
+			items = <
+				["at0000"] = <
+					text = <"*Inpatient medication supply(en)">
+					description = <"*Inpatient medication supply details.(en)">
+				>
+				["at0001"] = <
+					text = <"*Tree(en)">
+					description = <"*@ internal @(en)">
+				>
+				["at0003"] = <
+					text = <"Trajanje zaloge">
+					description = <"*The number of days of medication which should be supplied, or is already available, in the case of patient 's own supply.(en)">
+				>
+				["at0004"] = <
+					text = <"Osnovni predpis zdravila">
+					description = <"*Link to the original medication record.(en)">
+				>
+				["at0006"] = <
+					text = <"*Dispensed(en)">
+					description = <"*The medication supply has been dispensed.(en)">
+				>
+				["at0007"] = <
+					text = <"*Supply requested(en)">
+					description = <"*The medication supply has been requested.(en)">
+				>
+				["at0008"] = <
+					text = <"Kategorija zaloge zdravila">
+					description = <"*The category of medication supply required.(en)">
+				>
+				["at0009"] = <
+					text = <"Oddelčna zaloga">
+					description = <"Zdravilo se pacientu dobavlja iz oddelčne zaloge">
+				>
+				["at0010"] = <
+					text = <"Ni zaloge">
+					description = <"Zdravilo ni na zalogi na oddelku">
+				>
+				["at0011"] = <
+					text = <"Pacientova zaloga">
+					description = <"Zdravilo je na voljo iz pacientove osebne zaloge">
+				>
+				["at0012"] = <
+					text = <"\"One Stop\" zaloga">
+					description = <"Pacientu se dobavi zalogo zdravil, ki zadošča tudi za odpust">
+				>
+			>
+		>
+	>
