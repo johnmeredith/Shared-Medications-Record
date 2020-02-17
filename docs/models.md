@@ -20,11 +20,13 @@ The design would rely on openEHR clinical models to represent either Dose or Pro
 ![Shared Medications Record Process Flow Diagram](img/smr_architecture.png)
 
 An enterprise grade openEHR clinical data repository will support the SMR providing native REST based APIs for CRUD operations during 2020/21 following completion of architecture design. Interoperability will be facilitated through conformance to the following UK Core NHS FHIR profiles;
+
 * AllergyIntolerance
 * Medication
 * MedicationReques
 * MedicationStatement
 
 Two principle views on the SMR will be made available;
+
 * Acute Care Supply & Prescribing Record
 * Community Supply & Prescribing Record
