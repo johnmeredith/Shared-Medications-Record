@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "shared-medications-record"
+version = "0.1.0"
+description = "NHS Wales Shared Medication Record Documentation"
+authors = ["NHS Wales Informatics Service"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+mkdocs = "^1.0.4"
+mkdocs-material = "^4.6.3"
+pymdown-extensions = "^6.3"
+fontawesome-markdown = "^0.2.6"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"

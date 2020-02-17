@@ -1,0 +1,70 @@
+# Project information
+site_name: 'Shared Medications Record Documentation'
+site_description: 'Shared Meds NWIS documentation'
+site_author: 'Team Shared Meds'
+site_url: 'https://smr-docs.netlify.com/'
+
+# Navigation
+nav:
+  - index.md
+  - models.md
+  - about.md
+
+# Configuration
+theme:
+  name: 'material'
+  language: 'en'
+  logo:
+    icon: "note_add"
+
+  palette:
+    primary: 'Blue Grey'
+    accent: 'Deep Orange'
+  font:
+#    text: "IBM Plex Serif"
+    text: "IBM Plex Sans"
+    code: "IBM Plex Mono"
+
+# Repository
+repo_name: 'Shared Meds Record'
+repo_url: 'https://github.com/johnmeredith/Shared-Medications-Record'
+
+# Copyright
+copyright: 'Copyright &copy; 2020 NHS Wales Informatics Service'
+
+# Extensions
+markdown_extensions:
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
+  - smarty
+  - admonition
+  - footnotes
+  - codehilite
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - fontawesome_markdown
+
+# Customisation
+extra:
+  social:
+    - type: "github"
+      link: "https://github.com/johnmeredith/Shared-Medications-Record"
+
+extra_css:
+  - "stylesheets/extra.css"
