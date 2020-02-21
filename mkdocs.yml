@@ -18,7 +18,7 @@ theme:
     icon: "note_add"
 
   palette:
-    primary: 'Blue Grey'
+    primary: 'Green'
     accent: 'Deep Orange'
   font:
 #    text: "IBM Plex Serif"
