@@ -23,7 +23,7 @@ theme:
     icon: "note_add"
 
   palette:
-    primary: 'Grey'
+    primary: 'Purple'
     accent: 'Deep Orange'
   font:
 #    text: "IBM Plex Serif"
