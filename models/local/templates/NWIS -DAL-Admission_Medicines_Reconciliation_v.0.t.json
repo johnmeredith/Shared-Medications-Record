@@ -11,7 +11,7 @@
     },
     "otherContributors" : [ ],
     "lifecycleState" : {
-      "codeString" : "in_development"
+      "codeString" : "release_candidate"
     },
     "ipAcknowledgements" : { },
     "references" : { },
@@ -22,7 +22,7 @@
       "original_namespace" : "org.openehr",
       "original_publisher" : "openEHR Foundation",
       "custodian_namespace" : "org.openehr",
-      "MD5-CAM-1.0.1" : "eea12e6c5292e12b3f775e00615c054a",
+      "MD5-CAM-1.0.1" : "0c546c41637ed75c845b17028720dd0a",
       "PARENT:MD5-CAM-1.0.1" : "FC27CA9802E3608CB3E7FF598A6E6032"
     },
     "details" : {
@@ -58,7 +58,7 @@
           },
           "codeString" : "en"
         },
-        "keywords" : [ ],
+        "keywords" : [ "discharge advice letter, DAL, medication," ],
         "originalResourceUri" : { },
         "otherDetails" : { }
       },
