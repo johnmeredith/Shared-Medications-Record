@@ -8,9 +8,10 @@ site_url: 'https://smr-docs.netlify.com/'
 nav:
   - index.md
   - models.md
-  - about.md
-    - license.md
-  - 'API Examples': 'api-examples.md'
+  - About:
+    - about.md
+    - 'License': 'license.md'
+  - 'API Examples':
     - create-patient.md
     - search-patient-record.md
 
