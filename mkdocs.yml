@@ -9,6 +9,7 @@ nav:
   - index.md
   - models.md
   - about.md
+  - api-examples.md
 
 # Configuration
 theme:
@@ -18,7 +19,7 @@ theme:
     icon: "note_add"
 
   palette:
-    primary: 'Green'
+    primary: 'Grey'
     accent: 'Deep Orange'
   font:
 #    text: "IBM Plex Serif"
