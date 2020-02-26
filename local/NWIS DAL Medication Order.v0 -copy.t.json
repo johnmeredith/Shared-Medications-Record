@@ -22,7 +22,7 @@
       "original_namespace" : "org.openehr",
       "original_publisher" : "openEHR Foundation",
       "custodian_namespace" : "org.openehr",
-      "MD5-CAM-1.0.1" : "2421beb7790bd6745eb7504a0fe30c94",
+      "MD5-CAM-1.0.1" : "f64af9980be778ae7424809f938e0dcb",
       "PARENT:MD5-CAM-1.0.1" : "FC27CA9802E3608CB3E7FF598A6E6032"
     },
     "details" : {
@@ -158,7 +158,7 @@
         "at0000.1" : {
           "@type" : "ARCHETYPE_TERM",
           "code" : "at0000.1",
-          "text" : "NWIS DAL Medication Order.v0 -copy",
+          "text" : "DAL Medication Order",
           "description" : "A persistent and versioned list of medicines for an individual."
         }
       },
@@ -196,7 +196,7 @@
   "rmName" : "openehr",
   "rmRelease" : "1.0.3",
   "generated" : true,
-  "templateId" : "NWIS DAL Medication Order.v0 -copy",
+  "templateId" : "NWIS DAL Medication Order.v0",
   "otherMetaData" : { },
   "templateOverlays" : [ {
     "@type" : "TEMPLATE_OVERLAY",
