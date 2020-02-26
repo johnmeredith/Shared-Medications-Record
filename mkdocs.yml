@@ -12,8 +12,9 @@ nav:
     - about.md
     - 'License': 'license.md'
   - 'API Examples':
-    - create-patient.md
-    - search-patient-record.md
+    - api-examples\api-examples-overview.md
+    - api-examples\create-patient.md
+    - api-examples\search-patient-record.md
 
 # Configuration
 theme:
