@@ -9,7 +9,10 @@ nav:
   - index.md
   - models.md
   - about.md
-  - api-examples.md
+    - license.md
+  - 'API Examples': 'api-examples.md'
+    - create-patient.md
+    - search-patient-record.md
 
 # Configuration
 theme:
