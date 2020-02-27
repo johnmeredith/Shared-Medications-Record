@@ -6,13 +6,14 @@ site_url: 'https://smr-docs.netlify.com/'
 
 # Navigation
 nav:
+  - Home: '../'
   - index.md
   - models.md
   - About:
     - about.md
     - 'License': 'license.md'
   - 'API Examples':
-    - '/api-examples/api-examples-overview.md'
+    - 'Overview': '/api-examples/api-examples-overview.md'
     - '/api-examples/create-patient.md'
     - '/api-examples/search-patient-record.md'
 
