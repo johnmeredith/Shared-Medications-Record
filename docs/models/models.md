@@ -1,4 +1,4 @@
-# Models
+# Model Overview
 Here lie the clinical models to describe the Shared Medicines Record. We're using [openEHR](http://www.openehr.org "openEHR") archetypes and templates.
 
 This model is predicated upon several core principles of clincial interaction with a medications list. It may apply to a variety of clinical contexts and there may be subtle differences with how the record is used. 
