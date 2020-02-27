@@ -4,7 +4,6 @@ site_description: 'Shared Meds NWIS documentation'
 site_author: 'Team Shared Meds'
 site_url: 'https://smr-docs.netlify.com/'
 
-
 # Configuration
 theme:
   name: 'material'
