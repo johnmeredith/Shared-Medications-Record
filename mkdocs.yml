@@ -4,17 +4,6 @@ site_description: 'Shared Meds NWIS documentation'
 site_author: 'Team Shared Meds'
 site_url: 'https://smr-docs.netlify.com/'
 
-# Navigation
-nav:
-  - index.md
-  - models.md
-  - About:
-    - about.md
-    - 'License': 'license.md'
-  - 'API Examples':
-    - '/api-examples/api-examples-overview.md'
-    - '/api-examples/create-patient.md'
-    - '/api-examples/search-patient-record.md'
 
 # Configuration
 theme:
