@@ -12,12 +12,12 @@ This repository will support use cases from primary, secondary and tertiary care
 
 ## The Process
 The following diagram describes the process for sharing medicines within the community and acute clinical settings. 
-![Shared Medications Record Process Flow Diagram](img/smr_process_flow.png)
+![Shared Medications Record Process Flow Diagram](../img/smr_process_flow.png)
 
 ## Proposed Architecture
 The design would rely on openEHR clinical models to represent either Dose or Product based records as the two primary approaches to medication and treatment prescribing. It is to be used as a record of active and historical medications in a patient centric view. The repository will support and underpin the data flows required for ePrescribing by utilising models and components that are currently provisioned for use in commercial systems, available as openEHR templates. This demonstrates a robustness and scalability to underpin SMR for both the information model and the technical implementation.
 
-![Shared Medications Record Process Flow Diagram](img/smr_architecture.png)
+![Shared Medications Record Process Flow Diagram](../img/smr_architecture.png)
 
 An enterprise grade openEHR clinical data repository will support the SMR providing native REST based APIs for CRUD operations. Interoperability will be facilitated through conformance to the following UK Core NHS FHIR profiles;
 
