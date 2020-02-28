@@ -1,4 +1,4 @@
-# About Us
+# About The Project
 Hi there! :fa-thumbs-up:
 
 We're building a shared medicines record for use across NHS Wales and work for the [NHS Wales Informatics Service](https://nwis.nhs.wales/ "NHS Wales Informatics Service"). We're also getting a little help from [FreshEHR](https://freshehr.com/ "FreshEHR Ltd") and our friends at [Apperta Foundation](https://apperta.org/ "The Apperta Foundation"). 
