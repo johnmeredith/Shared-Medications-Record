@@ -6,5 +6,3 @@ We're building a shared medicines record for use across NHS Wales and work for t
 If you are interested in this project, please reach out to us. 
 
 Grab a coffee. We'll be here a while. :fa-coffee:
-
-Hi
