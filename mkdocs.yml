@@ -24,7 +24,7 @@ repo_name: 'Shared Meds Record'
 repo_url: 'https://github.com/johnmeredith/Shared-Medications-Record'
 
 # Copyright
-copyright: 'Copyright &copy; 2020 NHS Wales Informatics Service'
+copyright: Copyright &copy; 2021 Digital Health and Care Wales
 
 # Extensions
 markdown_extensions:
@@ -59,6 +59,9 @@ extra:
   social:
     - type: "github"
       link: "https://github.com/johnmeredith/Shared-Medications-Record"
+
+    - icon: fontawesome/brands/github
+      link: https://github.com/johnmeredith/Shared-Medications-Record
 
 extra_css:
   - "stylesheets/extra.css"
